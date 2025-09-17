@@ -7,10 +7,10 @@ session_count=$(tmux list-sessions | wc -l)
 
 # 只有一个 session，不显示 session_name
 if [ "$session_count" -eq 1 ]; then
-  candidates=$(tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index}	#{b:pane_current_path} : ${GREEN}#{pane_current_command}${RESET}")
+  candidates=$(tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index} #{b:pane_current_path} : ${GREEN}#{pane_current_command}${RESET}")
 
 else
-  candidates=$(tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index}	#{session_name} : #{b:pane_current_path} : ${GREEN}#{pane_current_command}${RESET}")
+  candidates=$(tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index} #{session_name} : #{b:pane_current_path} : ${GREEN}#{pane_current_command}${RESET}")
 fi
 
 selected=$(
@@ -24,3 +24,5 @@ TARGET=$(echo "$selected" | cut -d' ' -f1)
 tmux switch-client -t "${TARGET%%:*}"
 tmux select-window -t "${TARGET%.*}"
 tmux select-pane -t "$TARGET"
+
+# tmux display-message "Switched to pane $TARGET"
