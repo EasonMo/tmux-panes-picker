@@ -4,7 +4,7 @@ The Tmux plugin allows you to search for panes across all windows in all running
 
 ## Usage
 
-Hit `prefix` + `@open_search_panes_key` (default: v) to search for.
+Hit `prefix` + `@search_panes_key` (default: v) to search for.
 The plugin opens live search (fzf) with previews for all panes in all windows/sessions.
 Press Enter to open the selected pane, or Esc to abort.
 
@@ -12,7 +12,6 @@ Press Enter to open the selected pane, or Esc to abort.
 
 ### Requirements
 
-- [GNU bash](https://www.gnu.org/software/bash/)
 - [fzf](https://github.com/junegunn/fzf/)
 
 ### Using [TPM](https://github.com/tmux-plugins/tpm/)
