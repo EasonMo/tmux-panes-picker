@@ -13,4 +13,4 @@ tmux_option() {
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-tmux bind -N 'Search panes' "$(tmux_option "@open_search_panes_key" "v")" display-popup -E "${CURRENT_DIR}/scripts/fzf.sh"
+tmux bind -N 'Search panes' "$(tmux_option "@search_panes_key" "v")" display-popup -E "${CURRENT_DIR}/scripts/fzf.sh"
